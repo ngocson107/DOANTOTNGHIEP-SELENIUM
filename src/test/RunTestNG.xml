@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="DATN_2051067583" verbose="1">
+    <test name="DATN_2051067583">
+                <packages>
+                    <package name="Testcases" />
+                </packages>
+<!--        <classes>-->
+<!--                        <class name="Testcases.Login"/>-->
+<!--                        <class name="Testcases.Dashboard">-->
+<!--            <class name="Testcases.Customer">-->
+<!--                <methods>-->
+<!--                    <include name="testAddNewCustomer"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+    </test>
+</suite>
+
+
+
