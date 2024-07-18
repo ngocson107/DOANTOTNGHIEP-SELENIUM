@@ -9,7 +9,7 @@ public class Customer extends BaseSetUp {
 
     @Test
     public void testAddNewCustomer() {
-        String CUSTOMER_NAME = "DO AN TOT NGHIEP 2024";
+        String CUSTOMER_NAME = "Đồ Án Tốt Nghiệp - Kiều Ngọc Sơn - 2051067583";
 
         loginPage = new LoginPage(driver);
 

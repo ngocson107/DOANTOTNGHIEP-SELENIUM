@@ -2,6 +2,8 @@ package Pages;
 
 import DATN.COM.WebUI;
 import org.openqa.selenium.By;
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -19,13 +21,24 @@ public class CustomerPage extends CommonPage {
     private By inputSearch = By.xpath("//input[@class='form-control input-sm']");
     private By buttonImportCustomer = By.xpath("//a[normalize-space()='Import Customers']");
     private By labelTotalCustomer = By.xpath("//span[normalize-space()='Total Customers']/preceding-sibling::span");
-
     private By inputCompany = By.xpath("//input[@id='company']");
     private By inputVAT = By.xpath("//input[@id='vat']");
     private By inputPhone = By.xpath("//input[@id='phonenumber']");
     private By inputWebsite = By.xpath("//input[@id='website']");
+    private By dropdownGroups = By.xpath("//button[@data-id='groups_in[]']");
+    private By inputSearchGroup = By.xpath("//div[@app-field-wrapper='groups_in[]']//input[@type='search']");
+    private By dropdownCurrency = By.xpath("//button[@data-id='default_currency']");
+    private By inputSearchCurrency = By.xpath("//div[@app-field-wrapper='default_currency']//input[@type='search']");
+    private By dropdownLanguage = By.xpath("//button[@data-id='default_language']");
+    private By optionVietnamese = By.xpath("//span[normalize-space()='Vietnamese']");
+    private By inputAddress = By.xpath("//textarea[@id='address']");
+    private By inputCity = By.xpath("//input[@id='city']");
+    private By inputState = By.xpath("//input[@id='state']");
+    private By inputZipCode = By.xpath("//input[@id='zip']");
+    private By buttonCountry = By.xpath("//button[@data-id='country']");
+    private By inputSearchCountry = By.xpath("//div[@app-field-wrapper='country']//input[@type='search']");
+    private By buttonSaveAndCreateContact = By.xpath("//button[normalize-space()='Save and create contact'");
     private By buttonSave = By.xpath("//div[@id='profile-save-section']//button[normalize-space()='Save']");
-
     private By itemFirstCustomerOnTable = By.xpath("//tbody/tr[1]/td[3]/a");
 
     public CustomerPage verifyRedirectToCustomerPage() {
@@ -40,9 +53,24 @@ public class CustomerPage extends CommonPage {
         WebUI.waitForPageLoaded();
         WebUI.clickElement(buttonNewCustomer);
         WebUI.setText(inputCompany, company);
-        WebUI.setText(inputVAT, "10");
+        WebUI.setText(inputVAT, "14");
         WebUI.setText(inputPhone, "0123456789");
-        WebUI.setText(inputWebsite, "https://www.youtube.com/");
+        WebUI.setText(inputWebsite, "https://github.com/ngocson107");
+        WebUI.clickElement(dropdownGroups);
+        WebUI.sleep(1);
+        WebUI.setText(inputSearchGroup, "Gold");
+        WebUI.sleep(1);
+        WebUI.sendKeys(inputSearchGroup, Keys.ENTER);
+        WebUI.clickElement(dropdownGroups);
+        WebUI.setText(inputAddress, "Tân Bình");
+        WebUI.setText(inputCity, "Thành Phố Hồ Chí Minh");
+        WebUI.setText(inputState, "Tân Bình");
+        WebUI.setText(inputZipCode, "1411");
+        WebUI.clickElement(buttonCountry);
+        WebUI.sleep(1);
+        WebUI.setText(inputSearchCountry, "Vietnam");
+        WebUI.sleep(1);
+        WebUI.sendKeys(inputSearchCountry, Keys.ENTER);
         WebUI.clickElement(buttonSave);
         return this;
     }
@@ -59,7 +87,7 @@ public class CustomerPage extends CommonPage {
         WebUI.clickElement(itemFirstCustomerOnTable);
         WebUI.waitForPageLoaded();
         Assert.assertEquals(WebUI.getElementAttribute(inputCompany, "value"), company, "The Company name not match.");
-        Assert.assertEquals(WebUI.getElementAttribute(inputVAT, "value"), "10", "The VAT value not match.");
+        Assert.assertEquals(WebUI.getElementAttribute(inputVAT, "value"), "14", "The VAT value not match.");
 
         return this;
     }

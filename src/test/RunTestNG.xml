@@ -2,16 +2,16 @@
 
 <suite name="DATN_2051067583" verbose="1">
     <test name="DATN_2051067583">
-                <packages>
-                    <package name="Testcases" />
-                </packages>
+        <packages>
+            <package name="Testcases" />
+        </packages>
 <!--        <classes>-->
-<!--                        <class name="Testcases.Login"/>-->
-<!--                        <class name="Testcases.Dashboard">-->
+<!--&lt;!&ndash;            <class name="Testcases.Login"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            <class name="Testcases.Dashboard"/>&ndash;&gt;-->
 <!--            <class name="Testcases.Customer">-->
-<!--                <methods>-->
-<!--                    <include name="testAddNewCustomer"/>-->
-<!--                </methods>-->
+<!--&lt;!&ndash;                <methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="testAddNewCustomer"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                </methods>&ndash;&gt;-->
 <!--            </class>-->
 <!--        </classes>-->
     </test>

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import org.openqa.selenium.Keys;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -25,6 +26,13 @@ public class WebUI {
         driver = _driver;
     }
 
+
+    public static void sendKeys(By by, Keys key) {
+        WebElement element = driver.findElement(by);
+        element.sendKeys(key);
+    }
+    
+    
     public static void sleep(double second) {
         try {
             Thread.sleep((long) (1000 * second));
